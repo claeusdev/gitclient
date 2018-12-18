@@ -1,4 +1,16 @@
-import text from './test';
+import Form from './Form';
 
-document.querySelector('#root').textContent = text;
-console.log(text);
+class App {
+  constructor() {
+    this.cards = [];
+    this.addCard = this.addCard.bind(this);
+  }
+
+  addCard(data) {
+    this.cards.push(data);
+    console.log(this.cards);
+  }
+}
+
+const app = new App();
+const form = new Form(app.addCard);
